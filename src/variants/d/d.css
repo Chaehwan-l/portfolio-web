@@ -1,0 +1,60 @@
+/* Variant D — dark editorial (fifth brief). Loaded only with /d/. */
+@import "@fontsource/inter/latin-300.css";
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-700.css";
+
+.theme-d {
+  --d-bg: hsl(0 0% 4%);
+  --d-surface: hsl(0 0% 8%);
+  --d-text: hsl(0 0% 96%);
+  --d-muted: hsl(0 0% 53%);
+  --d-stroke: hsl(0 0% 12%);
+  --d-accent: linear-gradient(90deg, #89aacc 0%, #4e85bf 100%);
+  background: var(--d-bg);
+  color: var(--d-text);
+  font-family: Inter, "Pretendard Variable", Pretendard, system-ui, sans-serif;
+}
+.theme-d .font-d-display { font-family: "Instrument Serif", "Pretendard Variable", Pretendard, serif; }
+.theme-d ::selection { background: #4e85bf; color: #fff; }
+.theme-d :focus-visible { outline: 2px solid #89aacc; outline-offset: 3px; }
+
+.accent-gradient { background: var(--d-accent); }
+.accent-text { background: linear-gradient(90deg, #a9c4df 0%, #5f93cc 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.accent-ring {
+  position: absolute; inset: -2px; border-radius: 9999px; z-index: -1;
+  background: linear-gradient(90deg, #89aacc, #4e85bf, #89aacc, #4e85bf);
+  background-size: 300% 100%; animation: d-gradient-shift 6s ease infinite;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.group:hover > .accent-ring, .group:focus-visible > .accent-ring { opacity: 1; }
+
+.d-logo-ring { background: linear-gradient(90deg, #89aacc 0%, #4e85bf 100%); transition: transform 0.3s ease; }
+.group:hover .d-logo-ring { background: linear-gradient(270deg, #89aacc 0%, #4e85bf 100%); transform: scale(1.1); }
+
+@keyframes d-scroll-down { from { transform: translateY(-100%); } to { transform: translateY(200%); } }
+@keyframes d-role-fade-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes d-gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes d-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgb(74 222 128 / 0.6); } 50% { box-shadow: 0 0 0 6px rgb(74 222 128 / 0); } }
+.animate-scroll-down { animation: d-scroll-down 1.5s ease-in-out infinite; }
+.animate-role-fade-in { animation: d-role-fade-in 0.4s ease-out; }
+.animate-d-pulse { animation: d-pulse 2s ease-in-out infinite; }
+
+.halftone { background-image: radial-gradient(circle, #000 1px, transparent 1px); background-size: 4px 4px; }
+.gradient-border-pill { position: relative; isolation: isolate; }
+.gradient-border-pill::before {
+  content: ""; position: absolute; inset: -1.5px; border-radius: inherit; z-index: -1;
+  background: linear-gradient(90deg, #89aacc, #4e85bf, #89aacc, #4e85bf); background-size: 300% 100%;
+  animation: d-gradient-shift 6s ease infinite;
+}
+
+/* Shared demo panels re-skinned for D */
+.theme-d .demo { background: var(--d-surface); border-color: var(--d-stroke); }
+.theme-d .demo, .theme-d .demo * { font-family: Inter, "Pretendard Variable", Pretendard, sans-serif; }
+.theme-d .pill-gradient { background: var(--d-accent); color: #0a0a0a !important; box-shadow: none; outline: none; }
+.theme-d .hero-heading { background: none; -webkit-text-fill-color: var(--d-text); }
+.theme-d .demo .h-2.w-2.rounded-full { background: var(--d-accent) !important; }
+
+html[data-variant="d"] { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html[data-variant="d"] { scroll-behavior: auto; } }

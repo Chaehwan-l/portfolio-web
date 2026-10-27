@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+@import "@fontsource/kanit/latin-300.css";
+@import "@fontsource/kanit/latin-400.css";
+@import "@fontsource/kanit/latin-500.css";
+@import "@fontsource/kanit/latin-700.css";
+@import "@fontsource/kanit/latin-900.css";
+/* variant B */
+@import "@fontsource/instrument-serif/latin-400-italic.css";
+@import "@fontsource/instrument-serif/latin-400.css";
+@import "@fontsource/barlow/latin-300.css";
+@import "@fontsource/barlow/latin-400.css";
+@import "@fontsource/barlow/latin-500.css";
+@import "@fontsource/barlow/latin-600.css";
+
+@source "./vendor/bklit";
+
+/* ------------------------------------------------------------------
+   Visual language from the "3D Creator" brief:
+   #0C0C0C ground · #D7E2EA text · steel gradient headings ·
+   violet→orange gradient pill · white sheets with 60px top radius.
+   Kanit for Latin, Pretendard for Hangul.
+------------------------------------------------------------------- */
+:root {
+  --bg: #0c0c0c;
+  --bg-2: #121314;
+  --bg-3: #1a1c1e;
+  --line: rgb(215 226 234 / 0.12);
+  --line-2: rgb(215 226 234 / 0.24);
+  --ink: #d7e2ea;
+  --ink-2: rgb(215 226 234 / 0.82);
+  --muted: rgb(215 226 234 / 0.58);
+  --dim: rgb(215 226 234 / 0.4);
+
+  --accent: #d7e2ea;
+  --violet: #c27bf0;
+  --signal: var(--violet);
+  --ok: #9fd6b8;
+  --info: #9cb7cc;
+  --warn: #f0c27b;
+  --alert: #ff9a73;
+
+  --pill: linear-gradient(123deg, #18011f 7%, #b600a8 37%, #7621b0 72%, #be4c00 100%);
+
+  /* Bklit tokens */
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --popover: #16171a;
+  --popover-foreground: var(--ink);
+  --muted-foreground: var(--muted);
+  --border: var(--line);
+  --chart-1: #d7e2ea;
+  --chart-2: #c27bf0;
+  --chart-3: #b600a8;
+  --chart-4: #be4c00;
+  --chart-5: var(--dim);
+  --chart-background: var(--bg);
+  --chart-foreground: var(--dim);
+  --chart-foreground-muted: var(--muted);
+  --chart-line-primary: #d7e2ea;
+  --chart-line-secondary: #c27bf0;
+  --chart-crosshair: var(--muted);
+  --chart-grid: rgb(215 226 234 / 0.07);
+  --chart-brush-border: var(--chart-grid);
+  --chart-tooltip-background: #16171a;
+  --chart-tooltip-foreground: var(--ink);
+  --chart-tooltip-muted: var(--muted);
+  --chart-indicator-color: var(--ink);
+  --chart-indicator-secondary-color: var(--bg);
+  --chart-segment-background: rgb(215 226 234 / 0.03);
+  --chart-segment-line: rgb(215 226 234 / 0.2);
+  --chart-label: var(--muted);
+  --legend: var(--bg);
+  --legend-foreground: var(--ink);
+  --legend-muted: var(--bg-3);
+  --legend-muted-foreground: var(--muted);
+  --legend-track: var(--line);
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: Kanit, "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-display: Kanit, "Pretendard Variable", Pretendard, sans-serif;
+  --font-mono: Kanit, "Pretendard Variable", Pretendard, ui-monospace, monospace;
+  --font-heading: "Instrument Serif", "Pretendard Variable", Pretendard, serif;
+  --font-body: Barlow, "Pretendard Variable", Pretendard, sans-serif;
+
+  --color-canvas: var(--bg);
+  --color-canvas-2: var(--bg-2);
+  --color-canvas-3: var(--bg-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-accent: var(--accent);
+  --color-violet: var(--violet);
+  --color-signal: var(--signal);
+  --color-ok: var(--ok);
+  --color-info: var(--info);
+  --color-warn: var(--warn);
+  --color-alert: var(--alert);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-label: var(--chart-label);
+  --color-chart-tooltip-background: var(--chart-tooltip-background);
+  --color-chart-tooltip-foreground: var(--chart-tooltip-foreground);
+  --color-chart-tooltip-muted: var(--chart-tooltip-muted);
+  --color-legend: var(--legend);
+  --color-legend-foreground: var(--legend-foreground);
+  --color-legend-muted: var(--legend-muted);
+  --color-legend-muted-foreground: var(--legend-muted-foreground);
+  --color-legend-track: var(--legend-track);
+}
+
+@layer base {
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body, #root { background: var(--bg); }
+  html {
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  body { word-break: keep-all; overflow-wrap: anywhere; }
+  ::selection { background: #b600a8; color: #fff; }
+  :focus-visible { outline: 2px solid var(--violet); outline-offset: 3px; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+  ul, ol { list-style: none; }
+}
+
+* { scrollbar-width: thin; scrollbar-color: rgb(215 226 234 / 0.2) transparent; }
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-heading-dark {
+  background: linear-gradient(180deg, #0c0c0c 0%, #3a3f46 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pill-gradient {
+  background: var(--pill);
+  box-shadow: 0px 4px 4px rgba(181, 1, 167, 0.25), inset 4px 4px 12px #7721b1;
+  outline: 2px solid #fff;
+  outline-offset: -3px;
+}
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Korean display headings (B, D): Pretendard, no faux italic. */
+.ko-display {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  word-break: keep-all;
+}
+.press { transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease, color 200ms ease, border-color 200ms ease, opacity 200ms ease; }
+.press:active { transform: scale(0.97); }
+
+/* Inside demo panels, give bordered boxes the same soft radius as the frame; dividers stay square. */
+.demo :where(div, li, span, button, a)[class*="border"] { border-radius: 14px; }
+.demo :where([class~="border-b"], [class~="border-t"], [class~="border-l"], [class~="border-r"]) { border-radius: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+/* ================================================================
+   Variant B — liquid glass (from the third brief)
+   ================================================================ */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before,
+.liquid-glass-strong::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.liquid-glass::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.15) 20%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0.45) 100%);
+}
+.liquid-glass-strong {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: none;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass-strong::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 20%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2) 80%, rgba(255,255,255,0.5) 100%);
+}
+
+/* Shared demo panels re-skinned for B: glass frame, white primary buttons. */
+.theme-b .demo { background: rgba(255,255,255,0.025); border-color: rgba(255,255,255,0.14); backdrop-filter: blur(20px); }
+.theme-b .demo, .theme-b .demo * { font-family: Barlow, "Pretendard Variable", Pretendard, sans-serif; }
+.theme-b .pill-gradient { background: #fff; color: #000 !important; box-shadow: none; outline: none; }
+.theme-b .hero-heading { background: none; -webkit-text-fill-color: #fff; }

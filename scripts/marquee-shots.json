@@ -1,0 +1,62 @@
+[
+  {
+    "name": "agency-field",
+    "label": "Agency state · field max"
+  },
+  {
+    "name": "agency-event",
+    "label": "Agency state · event unit"
+  },
+  {
+    "name": "pipeline-charset",
+    "label": "E-filing · charset fallback"
+  },
+  {
+    "name": "pipeline-partial",
+    "label": "E-filing · partial failure"
+  },
+  {
+    "name": "fanout-redis",
+    "label": "Fan-out · Redis Pub/Sub"
+  },
+  {
+    "name": "fanout-memory",
+    "label": "Fan-out · memory only"
+  },
+  {
+    "name": "gpu-snapshot",
+    "label": "GPU eval · N-1 index"
+  },
+  {
+    "name": "gpu-leak",
+    "label": "GPU eval · leakage check"
+  },
+  {
+    "name": "gpu-checkpoint",
+    "label": "GPU eval · checkpoint resume"
+  },
+  {
+    "name": "https-found",
+    "label": "HTTPS cutover · pod check"
+  },
+  {
+    "name": "https-fixed",
+    "label": "HTTPS cutover · fixed"
+  },
+  {
+    "name": "chat-normal",
+    "label": "After-hours AI · flow"
+  },
+  {
+    "name": "chat-staff",
+    "label": "After-hours AI · staff first"
+  },
+  {
+    "name": "chat-dup",
+    "label": "After-hours AI · idempotency"
+  },
+  {
+    "name": "flow-chart",
+    "label": "Work area by month"
+  }
+]
